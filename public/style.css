@@ -1,0 +1,317 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #e9c46a;
+}
+.header.ui {
+  margin-bottom: 0;
+}
+.match-card {
+  border-radius: 50px;
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 25px;
+}
+.match-card_content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.match-card_image {
+  display: flex;
+  justify-content: center;
+}
+.match-card_image img {
+  border-radius: 100%;
+  margin-left: 25px;
+  height: 96px;
+  width: 96px;
+  object-fit: cover;
+}
+
+.track-card {
+  background-color: #e76f51 !important;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: row;
+  height: 100px !important;
+  box-shadow: 5px 5px 11px rgba(0, 0, 0, 0.5);
+}
+.track-card:hover {
+  transform: scale(0.95);
+}
+.track-card .image {
+  margin-left: 5px;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.track-card .content {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  flex: 3;
+}
+.track-card img {
+  border-radius: 15px;
+  height: 85px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  height: 56px;
+  background-color: #264653;
+}
+.nav-right {
+  width: 30%;
+}
+nav .nav-right ul {
+  list-style: none;
+  color: whitesmoke !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+a {
+  color: whitesmoke;
+  transition: 0.2s ease-in-out;
+}
+a:hover {
+  color: #cbc2ff;
+}
+
+.moving.image {
+  -webkit-animation: up-down 1s infinite alternate;
+  animation: up-down 1s infinite alternate;
+  border: 15px solid #2a9d8f;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.socials_button {
+  transition: 0.1s ease;
+}
+.socials_button:hover {
+  transform: scale(1.2);
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+.hover-right {
+  transition: 0.2s ease;
+}
+.hover-right:hover {
+  transform: translateX(+5px);
+}
+.underline {
+  border-bottom: 2px solid #2a9d8f !important;
+}
+footer {
+  margin-top: 50px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+footer p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-teal,
+.text-teal a {
+  color: #2a9d8f !important;
+  transition: 0.3s ease-in-out;
+}
+.text-darkteal {
+  color: #264653 !important;
+}
+.text-orange {
+  color: #e76f51 !important;
+}
+a .text-teal:hover,
+.text-teal a:hover {
+  color: #264653 !important;
+}
+
+.compare-image {
+  width: 100px !important;
+  height: 100px !important;
+  object-fit: cover !important;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 0px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    height: 56px;
+    background-color: #264653;
+  }
+  .nav-right {
+    width: 50%;
+  }
+  nav .nav-right ul {
+    list-style: none;
+    color: whitesmoke !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .hidden-mobile {
+    display: none !important;
+  }
+  .huge-header {
+    font-size: 32px;
+    line-height: normal;
+    font-style: semi-bold;
+  }
+  .large-header {
+    font-size: 32px;
+    line-height: normal;
+    font-style: semi-bold;
+  }
+  .socials {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .match-card_image img {
+    border-radius: 100%;
+    margin-left: 15px;
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+  }
+}
+@media (min-width: 576px) {
+  .mobile-only {
+    display: none !important;
+  }
+  .hidden-mobile {
+    display: block !important;
+  }
+  .huge-header {
+    font-size: 32px;
+    line-height: normal;
+    font-style: semi-bold;
+  }
+  .large-header {
+    font-size: 32px;
+    line-height: normal;
+    font-style: semi-bold;
+  }
+  .socials {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .match-card_image img {
+    border-radius: 100%;
+    margin-left: 15px;
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+  }
+}
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .huge-header {
+    font-size: 48px;
+    line-height: normal;
+    font-style: semi-bold;
+  }
+  .large-header {
+    font-size: 32px;
+    line-height: normal;
+    font-style: semi-bold;
+  }
+  .match-card_image img {
+    border-radius: 100%;
+    margin-left: 25px;
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 992px) {
+  .huge-header {
+    font-size: 64px;
+    line-height: normal;
+    font-style: semi-bold;
+  }
+  .large-header {
+    font-size: 32px;
+    line-height: normal;
+    font-style: semi-bold;
+  }
+  .match-card_image img {
+    border-radius: 100%;
+    margin-left: 25px;
+    height: 96px;
+    width: 96px;
+    object-fit: cover;
+  }
+}
+
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+.mt-3 {
+  margin-top: 1rem !important;
+}
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+.mt-5 {
+  margin-top: 3rem !important;
+}
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
