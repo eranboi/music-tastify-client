@@ -92,14 +92,6 @@ class Navbar extends Component {
                 Sign in
               </div>
             </li>
-            <li
-              onClick={async () => {
-                let res = await Axios.get("http://localhost:8000/ping");
-                console.log(res);
-              }}
-            >
-              ERAN
-            </li>
           </ul>
         </div>
       </nav>
