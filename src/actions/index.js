@@ -6,6 +6,8 @@ import config from "../config";
 
 export const signInUser = (user) => async (dispatch) => {
   try {
+    console.log(user);
+    console.log("SIGN IN");
     localStorage.setItem("user", JSON.stringify(user));
     dispatch({
       type: "SIGN_IN",
@@ -23,7 +25,7 @@ export const autoSignIn = () => async (dispatch) => {
   try {
     const user = JSON.parse(localStorage.getItem("user"));
 
-    if (!user) {
+    if (user === undefined || !user) {
       return;
     }
     dispatch({

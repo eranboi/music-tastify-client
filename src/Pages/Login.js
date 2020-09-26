@@ -31,19 +31,25 @@ class Login extends Component {
           },
         });
 
-        this.props.signInUser(response.data);
-
         if (isMobile && response) {
+          this.props.signInUser(response.data);
           const redirect_to = params.get("redirect_to");
           this.props.history.push(redirect_to);
         }
         if (!isMobile && response) {
+          this.props.signInUser(response.data);
           window.opener.postMessage(
-            JSON.stringify({ user: response.data, token }),
+            true,
             process.env.NODE_ENV == "development"
               ? "http://localhost:3000"
-              : "https://www.music-tastify.com"
+              : "https://music-tastify.com"
           );
+          /* window.opener.postMessage(
+            JSON.stringify({ user: response.data }),
+            process.env.NODE_ENV == "development"
+              ? "http://localhost:3000"
+              : "https://music-tastify.com"
+          ); */
 
           window.close();
         }

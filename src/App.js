@@ -51,24 +51,38 @@ class App extends React.Component {
   };
 
   startListening = () => {
-    const eventListener = window.addEventListener("message", (message) => {
-      let messageParsed = null;
+    this.props.autoSignIn();
 
+    const eventListener = window.addEventListener("message", (message) => {
       if (message) {
+        window.removeEventListener("message");
+        message.data
+          ? this.props.autoSignIn()
+          : console.log("Couldn't sign in!");
+      }
+
+      //#region EVENT LISTENER FOR MESSAGES
+      /*       let messageParsed = null;
+          if (message) {
         try {
+          let messageStringified = JSON.stringify(message.data);
+
           window.removeEventListener("message", eventListener);
-          messageParsed = JSON.parse(JSON.stringify(message.data));
+
+          messageParsed = JSON.parse(messageStringified);
+
+          let messageParsedTwice = JSON.parse(messageParsed);
+
+          if (messageParsed) this.props.signInUser(messageParsed.user);
+
+          console.log(messageParsedTwice, "startListening");
         } catch (error) {
           console.log(error);
         }
-      }
 
-      if (messageParsed) {
         this.props.signInUser(messageParsed.user);
 
-        if (
-          process.env.NODE_ENV == "development" /* console.log(messageParsed) */
-        );
+        if (process.env.NODE_ENV == "development") console.log(messageParsed);
 
         Cookies.set(
           "SESSION_MUSIC_TASTIFY",
@@ -78,7 +92,8 @@ class App extends React.Component {
         localStorage.setItem("user", JSON.stringify(messageParsed.user));
       } else {
         console.log("message not received");
-      }
+      } */
+      //#endregion
     });
   };
 
